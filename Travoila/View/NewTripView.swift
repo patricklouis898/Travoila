@@ -6,6 +6,18 @@
 //
 import SwiftUI
 
+class TotalBudgetEstimation: ObservableObject {
+    @Published var value = "" {
+        didSet {
+            let filtered = value.filter { $0.isNumber }
+            
+            if value != filtered {
+                value = filtered
+            }
+        }
+    }
+}
+
 struct NewTripView: View {
     
     @State var tripTitle: String = ""
@@ -15,6 +27,7 @@ struct NewTripView: View {
     @State var endDate: Date = Date()
     
     @State var totalBudgetEstimation: String = ""
+    @ObservedObject var input = TotalBudgetEstimation()
     @State var listRowColor: Color = Color.gray.opacity(0.08)
     
     @Binding var trips: [Trip]
@@ -43,7 +56,7 @@ struct NewTripView: View {
                 }
                 
                 Section(header: Text("Total Budget Estimation")){
-                    TextField("IDR 0",text: $totalBudgetEstimation)
+                    TextField("IDR 0",text: $input.value)
                         .listRowBackground(listRowColor)
                         .keyboardType(.default)
                 }
