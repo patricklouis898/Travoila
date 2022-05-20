@@ -20,6 +20,7 @@
 		CD3982D42837453100E46A9D /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3982CD2837453100E46A9D /* OnBoardingView.swift */; };
 		CD3982D52837453100E46A9D /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3982CE2837453100E46A9D /* LocalNotification.swift */; };
 		CD3982D62837453100E46A9D /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3982CF2837453100E46A9D /* SplashScreen.swift */; };
+		CD3982D82837AA5D00E46A9D /* MyTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3982D72837AA5D00E46A9D /* MyTrip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		CD3982CD2837453100E46A9D /* OnBoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		CD3982CE2837453100E46A9D /* LocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		CD3982CF2837453100E46A9D /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		CD3982D72837AA5D00E46A9D /* MyTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				CD3982CA2837453100E46A9D /* NewTripView.swift */,
 				CD3982CC2837453100E46A9D /* SummaryView.swift */,
 				CD3982CB2837453100E46A9D /* Expense.swift */,
+				CD3982D72837AA5D00E46A9D /* MyTrip.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3982D82837AA5D00E46A9D /* MyTrip.swift in Sources */,
 				CD3982D62837453100E46A9D /* SplashScreen.swift in Sources */,
 				CD3982D22837453100E46A9D /* Expense.swift in Sources */,
 				CD3982C82837451E00E46A9D /* Trip.swift in Sources */,

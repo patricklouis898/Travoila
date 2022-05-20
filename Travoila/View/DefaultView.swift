@@ -18,7 +18,7 @@ struct TabContainerView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            Text("My trip")
+            MyTrip()
                 .tabItem {
                     Label("My Trips", systemImage: "airplane.circle")
                 }

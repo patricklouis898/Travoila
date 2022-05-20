@@ -66,6 +66,7 @@ struct NewTripView: View {
                     .cornerRadius(10.0)
             }
             .frame(minWidth:0,  maxWidth: .infinity)
+            .padding(.bottom, 30)
         }
         .navigationTitle("New Trip")
     }
