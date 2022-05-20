@@ -12,8 +12,8 @@ struct TravoilaApp: App {
     var body: some Scene {
         WindowGroup {
 //            SplashScreen()
-//            OnBoardingView()
-            LocalNotification()
+            OnBoardingView()
+//            LocalNotification()
         }
     }
 }

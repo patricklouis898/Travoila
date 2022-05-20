@@ -43,6 +43,7 @@ struct DefaultView: View {
                     Text("No Budget Trip Plan")
                         .frame(width: .infinity)
                         .font(.system(size: 20,weight: .medium))
+                        .padding(.top, 200)
                     
                     Spacer()
                         .frame(height: 10)
@@ -67,6 +68,7 @@ struct DefaultView: View {
                             .cornerRadius(10.0)
                     }
                     //                    }
+//                    .padding(.top, 200)
                 } else {
                     VStack {
                         NavigationLink (destination: SummaryView()) {

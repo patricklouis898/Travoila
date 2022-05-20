@@ -70,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				CD3982C2283744EC00E46A9D /* Model */,
-				CD3982C1283744E400E46A9D /* New Group */,
+				CD3982C1283744E400E46A9D /* View */,
 				CD3982B3283744DC00E46A9D /* TravoilaApp.swift */,
 				CD3982B5283744DC00E46A9D /* ContentView.swift */,
 				CD3982B7283744DC00E46A9D /* Assets.xcassets */,
@@ -87,7 +87,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CD3982C1283744E400E46A9D /* New Group */ = {
+		CD3982C1283744E400E46A9D /* View */ = {
 			isa = PBXGroup;
 			children = (
 				CD3982CF2837453100E46A9D /* SplashScreen.swift */,
@@ -98,7 +98,7 @@
 				CD3982CC2837453100E46A9D /* SummaryView.swift */,
 				CD3982CB2837453100E46A9D /* Expense.swift */,
 			);
-			path = "New Group";
+			path = View;
 			sourceTree = "<group>";
 		};
 		CD3982C2283744EC00E46A9D /* Model */ = {
