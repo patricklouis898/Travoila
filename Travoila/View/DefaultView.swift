@@ -34,9 +34,7 @@ struct DefaultView: View {
     
     var body: some View {
         NavigationView {
-//            VStack (spacing: isNoTrip ? 150 : 0) {
-//
-//            }
+
             ScrollView {
                 if(isNoTrip){
                     //                    VStack {
