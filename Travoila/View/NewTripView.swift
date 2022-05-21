@@ -6,18 +6,6 @@
 //
 import SwiftUI
 
-class TotalBudgetEstimation: ObservableObject {
-    @Published var value = "" {
-        didSet {
-            let filtered = value.filter { $0.isNumber }
-            
-            if value != filtered {
-                value = filtered
-            }
-        }
-    }
-}
-
 struct NewTripView: View {
     
     @State var tripTitle: String = ""
@@ -27,11 +15,11 @@ struct NewTripView: View {
     @State var endDate: Date = Date()
     
     @State var totalBudgetEstimation: String = ""
-    @ObservedObject var input = TotalBudgetEstimation()
     @State var listRowColor: Color = Color.gray.opacity(0.08)
     
     @Binding var trips: [Trip]
     @Binding var isNoTrip: Bool
+    @Binding var currentTrip: Trip
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
@@ -56,7 +44,7 @@ struct NewTripView: View {
                 }
                 
                 Section(header: Text("Total Budget Estimation")){
-                    TextField("IDR 0",text: $input.value)
+                    TextField("IDR 0",text: $totalBudgetEstimation)
                         .listRowBackground(listRowColor)
                         .keyboardType(.default)
                 }
@@ -86,8 +74,10 @@ struct NewTripView: View {
     
     func createNewTrip(){
         trips.append(
-            Trip(title: tripTitle, destination: tripDestination, startDate: startDate, endDate: endDate, totalBudgetEstimation: Int(totalBudgetEstimation) ?? 0, categories: [] )
+            Trip(id: 0, title: tripTitle, destination: tripDestination, startDate: startDate, endDate: endDate, totalBudgetEstimation: Int(totalBudgetEstimation) ?? 0, allocations: [] )
         )
+        
+        currentTrip = trips.last ?? Trip(id: 0, title: "Default", destination: "Default", startDate: Date(), endDate: Date(), totalBudgetEstimation: 20000, allocations: [])
         
         isNoTrip = false
         
@@ -99,8 +89,10 @@ struct NewTripView_Previews: PreviewProvider {
     
     @State private static var dummyData: [Trip] = []
     @State private static var isNoTrip: Bool = true
+    @State private static var currentTrip = Trip(id: 0, title: "Default", destination: "Default", startDate: Date(), endDate: Date(), totalBudgetEstimation: 20000, allocations: [])
+
     
     static var previews: some View {
-        NewTripView(trips: $dummyData, isNoTrip: $isNoTrip)
+        NewTripView(trips: $dummyData, isNoTrip: $isNoTrip, currentTrip: $currentTrip)
     }
 }

@@ -13,7 +13,7 @@ struct TabContainerView: View {
     
     var body: some View {
         TabView {
-            DefaultView(/*isNoTrip: $isNoTrip, trips: $trips*/)
+            DefaultView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -32,10 +32,11 @@ struct DefaultView: View {
     @State var isNoTrip: Bool = true
     @State var trips: [Trip] = []
     
+    @State var currentTrip: Trip = Trip(id: 0, title: "Default", destination: "Default", startDate: Date(), endDate: Date(), totalBudgetEstimation: 20000, allocations: [])
+    
     var body: some View {
         NavigationView {
-
-            ScrollView {
+            ScrollView(.vertical){
                 if(isNoTrip){
                     //                    VStack {
                     Text("No Budget Trip Plan")
@@ -56,7 +57,7 @@ struct DefaultView: View {
                         .frame(height: 10)
                         .background(Color.orange)
                     
-                    NavigationLink(destination: NewTripView(trips: $trips, isNoTrip: $isNoTrip)){
+                    NavigationLink(destination: NewTripView(trips: $trips, isNoTrip: $isNoTrip, currentTrip: $currentTrip)){
                         Text("Create Budget Trip")
                             .bold()
                             .padding(.horizontal, 30.0)
@@ -65,11 +66,9 @@ struct DefaultView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10.0)
                     }
-                    //                    }
-//                    .padding(.top, 200)
                 } else {
                     VStack {
-                        NavigationLink (destination: SummaryView()) {
+                        NavigationLink (destination: SummaryView(trips: $trips, currentTrip: $currentTrip)) {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Current Trip")
                                     .foregroundColor(.black)
